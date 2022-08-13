@@ -1,6 +1,6 @@
 # Morra 🤗
 
-This is a smart contract built with Reach that implements the business logic of the friendly game of Morra.  
+This is a smart contract built with Reach that implements the business logic for the friendly game of Morra.  
 
 ## Setup
 
