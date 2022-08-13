@@ -77,3 +77,5 @@ To enjoy this game, its best to open the app in two browser tabs, one for Alice 
 ![Screenshot (465)](https://user-images.githubusercontent.com/68448315/184478538-909dbca1-0a3f-4859-9c61-5ab9ba9bec1c.png)  
 
 ![Screenshot (467)](https://user-images.githubusercontent.com/68448315/184478505-c7c203fe-59af-45d1-8e69-ca3969e56ff8.png)
+
+For getting this far, I urge you to check [Reach Docs](https://docs.reach.sh) and play around building smart contract and DApps
