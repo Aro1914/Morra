@@ -1,0 +1,62 @@
+import { loadStdlib } from '@reach-sh/stdlib';
+import * as backend from './build/index.main.mjs';
+const stdlib = loadStdlib();
+
+const startingBalance = stdlib.parseCurrency(100);
+
+const fmt = x => stdlib.formatCurrency(x, 4);
+
+const getBalance = async x => stdlib.balanceOf(x);
+
+const whos = ['Bob', 'Alice'];
+
+const wager = 50;
+
+const [accAlice, accBob] =
+  await stdlib.newTestAccounts(2, startingBalance);
+console.log('Hello, Alice and Bob!');
+
+console.log('Launching...');
+const ctcAlice = accAlice.contract(backend);
+const ctcBob = accBob.contract(backend, ctcAlice.getInfo());
+
+console.log(`Initial Balances`);
+console.log(`Alice: ${fmt(await getBalance(accAlice))}`);
+console.log(`Bob: ${fmt(await getBalance(accBob))}`);
+
+const common = (who) => ({
+  ...stdlib.hasRandom,
+  fingers: Math.floor((Math.random() * 5) + 1),
+  guess: fingers => Math.floor((Math.random() * (5)) + (parseInt(fingers) + 1)),
+  reveal: (fingers, guess) => {
+    console.log(`${who} played ${fingers} fingers, and guessed the outcome would be ${guess} fingers.`);
+  },
+  declareWinner: (outcome, total) => {
+    console.log(`${who} ${who == whos[outcome] ? 'wins' : outcome != 2 ? `sees that ${whos[outcome]} wins because the outcome was actually ${total}` : `sees its a tie because they both played ${total} fingers in total.`}`);
+  },
+  informTimeout: () => console.log(`${who} observed a timeout.`)
+});
+
+console.log('Starting backends...');
+await Promise.all([
+  backend.Alice(ctcAlice, {
+    // implement Alice's interact object here
+    ...common('Alice'),
+    deadline: { ETH: 100, ALGO: 100, CFX: 1000 }[stdlib.connector],
+    wager: (() => {
+      console.log(`Alice wagers ${wager}`);
+      return stdlib.parseCurrency(wager);
+    })(),
+  }),
+  backend.Bob(ctcBob, {
+    // implement Bob's interact object here
+    ...common('Bob'),
+    acceptWager: wager => console.log(`Bob accepts the wager of ${fmt(wager)}`)
+  }),
+]);
+
+console.log(`Final Balances`);
+console.log(`Alice: ${fmt(await getBalance(accAlice))}`);
+console.log(`Bob: ${fmt(await getBalance(accBob))}`);
+
+console.log('Goodbye, Alice and Bob!');
