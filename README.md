@@ -5,7 +5,7 @@ This is a smart contract built with Reach that implements the business logic of 
 ## Setup
 
 - You must have WSL installed in your computer and Docker working too, to be able to run the containerized application successfully.  
-Follow the very comprehensive guide on how to get this done in the Quickstart section of [Reach Docs](https://docs.reach.sh/quickstart/#quickstart).
+Follow the very comprehensive guide on how to get this done in the Quickstart section of the [Reach Docs](https://docs.reach.sh/quickstart/#quickstart).
 - You should have a TestNet connected to your MetaMask Wallet, or instead use MyAlgo Wallet it spins a wallet in TestNet for you.  
 
 ## Usage
@@ -102,4 +102,4 @@ To enjoy this game, its best to open the app in two browser tabs, one for Alice 
 
 ![Screenshot (467)](https://user-images.githubusercontent.com/68448315/184478505-c7c203fe-59af-45d1-8e69-ca3969e56ff8.png)
 
-For getting this far, I urge you to check [Reach Docs](https://docs.reach.sh) and play around building smart contract and DApps
+For getting this far, I urge you to checkout the [Reach Docs](https://docs.reach.sh) and play around with building smart contract and DApps
