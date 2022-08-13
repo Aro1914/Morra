@@ -4,7 +4,7 @@ This is a smart contract built with Reach that implements the business logic for
 
 ## Setup
 
-- You must have WSL installed in your computer and Docker working too, to be able to run the containerized application successfully.  
+- You must have WSL installed in your computer and Docker working too, to be able to run the containerized Reach application successfully.  
 Follow the very comprehensive guide on how to get this done in the Quickstart section of the [Reach Docs](https://docs.reach.sh/quickstart/#quickstart).
 - You should have a TestNet connected to your MetaMask Wallet, or instead use MyAlgo Wallet it spins a wallet in TestNet for you.  
 
