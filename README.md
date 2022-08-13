@@ -1,4 +1,4 @@
-# Morra
+# Morra 🤗
 
 This is a smart contract built with Reach that implements the business logic of the friendly game of Morra.  
 
