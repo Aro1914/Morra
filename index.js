@@ -1,5 +1,5 @@
 import * as AppViews from "./components/App";
-import * as Attacher from "./components/App";
+import * as Attacher from "./components/Attacher";
 import * as Deployer from "./components/Deployer";
 import * as Player from "./components/Player";
 import RenderViews, { renderDOM } from "./layouts/renderViews";

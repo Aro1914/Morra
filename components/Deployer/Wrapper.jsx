@@ -1,11 +1,12 @@
 import React from "react";
 import { useClasses } from "../../hooks";
+import styles from "../../styles/Global.module.css";
 
 const Wrapper = ({ children }) => {
     return (
-        <div className={ useClasses() }>
-            <h2 className={ useClasses() }>Deployer (Alice)</h2>
-            <div className={ useClasses() }>
+        <div className={ useClasses(styles.subHeader) }>
+            <h2 className={ useClasses(styles.theme) }>Deployer (Alice)</h2>
+            <div className={ useClasses(styles.container) }>
                 { children }
             </div>
         </div>
